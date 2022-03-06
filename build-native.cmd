@@ -26,7 +26,7 @@ If NOT exist ".\build\%BUILD_ARCH%" (
   mkdir build\%BUILD_ARCH%
 )
 pushd build\%BUILD_ARCH%
-cmake -DCMAKE_GENERATOR_PLATFORM=%BUILD_CMAKE_GENERATOR_PLATFORM% ..\..
+cmake -DCMAKE_CXX_FLAGS="-I../cimgui/ -I../cimgui/imgui/ -DIMNODES_NAMESPACE='imnodes'" -DCMAKE_GENERATOR_PLATFORM=%BUILD_CMAKE_GENERATOR_PLATFORM% ..\..
 
 echo Calling cmake --build . --config %BUILD_CONFIG%
 cmake --build . --config %BUILD_CONFIG%
