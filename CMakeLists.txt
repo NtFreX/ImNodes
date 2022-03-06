@@ -18,7 +18,7 @@ file(GLOB IMGUI_SOURCES
 	${TABLES_SOURCE}
 )
 
-set(CMAKE_CXX_FLAGS "-Wall -I./cimgui/ -I./cimgui/imgui/ -DIMNODES_NAMESPACE='imnodes'")
+set(CMAKE_CXX_FLAGS "-DIMNODES_NAMESPACE='imnodes'")
 set(IMNODES_STATIC "no" CACHE STRING "Build as a static library")
 set(IMNODES_FREETYPE "no" CACHE STRING "Build with freetype library")
 set(IMNODES_LIBRARIES )
@@ -49,7 +49,11 @@ target_include_directories(cimnodes PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_include_directories(cimnodes PUBLIC 
 	${CMAKE_CURRENT_SOURCE_DIR}/imnodes
 	${CMAKE_CURRENT_SOURCE_DIR}/../cimgui
-	${CMAKE_CURRENT_SOURCE_DIR}/../cimgui/imgui)
+	${CMAKE_CURRENT_SOURCE_DIR}/../cimgui/imgui
+	${CMAKE_CURRENT_SOURCE_DIR}/cimgui/imgui
+	${CMAKE_CURRENT_SOURCE_DIR}/cimgui
+	${CMAKE_CURRENT_SOURCE_DIR}/cimnodes
+	${CMAKE_CURRENT_SOURCE_DIR}/cimnodes/imnodes)
 set_target_properties(cimnodes PROPERTIES PREFIX "")
 target_link_libraries(cimnodes ${IMNODES_LIBRARIES})
 
