@@ -33,7 +33,7 @@ done
 cp -r ./CMakeLists.txt $cimnodesPath
 mkdir -p $cimnodesPath/build/$_CMakeBuildType
 pushd $cimnodesPath/build/$_CMakeBuildType
-cmake ../.. -DCMAKE_OSX_ARCHITECTURES="$_CMakeOsxArchitectures" -DCMAKE_OSX_DEPLOYMENT_TARGET=10.13 -DCMAKE_BUILD_TYPE=$_CMakeBuildType -DCMAKE_CXX_FLAGS="-I../cimgui/ -I../cimgui/imgui/ -DIMNODES_NAMESPACE='imnodes'"
+cmake ../.. -DCMAKE_OSX_ARCHITECTURES="$_CMakeOsxArchitectures" -DCMAKE_OSX_DEPLOYMENT_TARGET=10.13 -DCMAKE_BUILD_TYPE=$_CMakeBuildType
 make
 popd
 
