@@ -9,6 +9,7 @@ set (CMAKE_CXX_STANDARD 11)
 file(GLOB IMNODES_SOURCES
     cimnodes.cpp
     imnodes/imnodes.cpp
+	"imnodes/dependencies/imgui-1.84.2/imgui.cpp"
 	"imnodes/dependencies/imgui-1.84.2/imgui_tables.cpp"
 )
 
@@ -22,6 +23,8 @@ else (WIN32)
 endif (WIN32)
 
 add_definitions(-DIMNODES_NAMESPACE=imnodes)
+
+set_target_properties(cimnodes PROPERTIES PREFIX "")
 target_include_directories(cimnodes PUBLIC 
 	${CMAKE_CURRENT_SOURCE_DIR}
 	${CMAKE_CURRENT_SOURCE_DIR}/imnodes
